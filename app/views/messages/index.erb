@@ -1,0 +1,13 @@
+<% @messages.each do |message| %>
+  <div class ="message">
+<h3><a href="/messages/<%= message.id %>"><%= message.id %></a> <small><a href="/messages/author/<%= message.author%>">(by: <%= message.author %>)</a></small></h3>
+       <p>
+        <%= message.content %>
+      </p>
+          <p>
+        <%= message.url%>
+      </p>
+    </div>
+<% end %>
+
+<a href="/messages/new">Post a message..... It's FREE (for now)!</a>

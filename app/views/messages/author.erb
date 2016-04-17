@@ -1,0 +1,14 @@
+<h1>All Messages</h1>
+<hr/>
+<% @message_author.each do |message| %>
+  <div class="message" style="background: #f7f7f7; border:1px solid #ccc; padding:15px; margin:20px;">
+    <h3><a href="<% $base_url %>/messages/<%= message.id %>"><%= message.content %></a><small>(by: <a href="<% $base_url %>/messages/author/<%= message.author %>"><%= message.author %></a>)</small></h3>
+  
+    <% if message.url != nil %>
+    <a href="<%= message.url %>"><%= message.url %></a>
+    <% end %>
+
+  </div>
+<% end %>
+
+<a href="/messages/new">Post a message... It's FREE (for now)!</a>
